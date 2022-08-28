@@ -10,6 +10,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var hasConnectionNetwork: HasConnectionNetwork
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        hasConnectionNetwork = HasConnectionNetwork()
+        setContentView(R.layout.activity_main)
+        IntentFilter("android.net.conn.CONNECTIVITY_CHANGE").also {
+            registerReceiver(hasConnectionNetwork, it)
+        }
     }
 
 }

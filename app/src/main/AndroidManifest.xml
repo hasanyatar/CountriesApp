@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.countriesapp">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,6 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CountriesApp"
         tools:targetApi="31">
+        <receiver
+            android:name=".util.brodcast_receiver.HasConnectionNetwork"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+
+
         <activity
             android:name=".view.MainActivity"
             android:exported="true">

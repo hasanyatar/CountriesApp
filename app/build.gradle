@@ -46,9 +46,16 @@ dependencies {
 
     // Kotlin
 
+    def retrofitVersion = '2.3.0'
+    def rxJavaVersion = '2.1.1'
     def nav_version = "2.5.1"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 }
